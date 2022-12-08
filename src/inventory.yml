@@ -1,0 +1,20 @@
+---
+
+all:
+  children:
+    base:
+      hosts:
+        lts-alpine:
+          ansible_connection: local
+          node_version: lts
+          os_name: alpine
+        19-alpine:
+          ansible_connection: local
+          node_version: 19
+          os_name: alpine
+        18-alpine:
+          ansible_connection: local
+          node_version: 18
+          os_name: alpine
+
+...

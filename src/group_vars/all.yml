@@ -1,0 +1,40 @@
+---
+
+# Ansible specific definitions
+########################################################################################################################
+edit_comment: "# Auto-generated via Ansible: edit src/Dockerfiles/all/Dockerfile.j2 instead."
+
+
+# Variables
+########################################################################################################################
+# ...
+
+
+# Dist directories
+########################################################################################################################
+tpl_directories:
+  - path: "../dist/{{ node_version }}-{{ os_name }}/configs"
+
+
+# Dockerfile paths
+########################################################################################################################
+tpl_dockerfiles:
+  - src: Dockerfiles/all/Dockerfile.j2
+    dst: "../dist/{{ node_version }}-{{ os_name }}/Dockerfile"
+
+
+# Additional configuration files
+########################################################################################################################
+tpl_configs:
+  # 00-set-upstream.sh
+  - src: configs/enable-extensions.sql
+    dst: "../dist/{{ node_version }}-{{ os_name }}/configs/enable-extensions.sql"
+
+
+# Dgoss tests
+########################################################################################################################
+tpl_docker_tests:
+  - src: Dockerfiles/all/goss.yaml.j2
+    dst: "../dist/{{ node_version }}-{{ os_name }}/goss.yaml"
+
+...
