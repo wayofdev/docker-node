@@ -13,5 +13,9 @@ command:
     stdout:
       - "7."
     exit-status: 0
+  "turbo --version":
+    stdout:
+      - "1."
+    exit-status: 0
 
 ...

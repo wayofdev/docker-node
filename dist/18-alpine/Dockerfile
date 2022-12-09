@@ -16,10 +16,14 @@ LABEL "org.opencontainers.image.ref.name"="18-alpine"
 LABEL "org.opencontainers.image.title"="node-18-alpine"
 LABEL "org.opencontainers.image.description"="node-18-alpine"
 
+WORKDIR /app
+
 RUN set -eux; \
-  apk add \
+  apk add --no-cache \
     curl \
     git \
+    # For vercel/turbo
+    libc6-compat \
   && /bin/ash -c 'set -ex && \
     ARCH=`uname -m` && \
       if [ "$ARCH" == "x86_64" ]; then \
@@ -32,4 +36,6 @@ RUN set -eux; \
          echo "unknown arch" && \
          curl -fsSL "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-arm64" -o /bin/pnpm; \
       fi' \
-  && chmod +x /bin/pnpm
+  && chmod +x /bin/pnpm \
+  # https://github.com/vercel/turbo/issues/2198
+  && yarn global add turbo
