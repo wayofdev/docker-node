@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.2.0](https://github.com/wayofdev/docker-node/compare/v1.1.0...v1.2.0) (2022-12-09)
+
+
+### Features
+
+* better conditional syntax in src dockerfile ([6ba0fb8](https://github.com/wayofdev/docker-node/commit/6ba0fb8dc7bf521cb0ffcb90d6f061f76b1ef38b))
+
+
+### Bug Fixes
+
+* In POSIX sh, == in place of = is undefined ([772729b](https://github.com/wayofdev/docker-node/commit/772729bc29ec5618a6c36dd4926c606889f3a85f))
+
 ## [1.1.0](https://github.com/wayofdev/docker-node/compare/v1.0.0...v1.1.0) (2022-12-09)
 
 
