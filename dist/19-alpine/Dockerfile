@@ -26,7 +26,7 @@ RUN set -eux; \
   && ARCH=$(uname -m) &&  \
     if [ "$ARCH" = "x86_64" ]; then \
       curl -fsSL "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64" -o /bin/pnpm; \
-    elif [ "$ARCH" == "aarch64" ]; then \
+    elif [ "$ARCH" = "aarch64" ]; then \
       curl -fsSL "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-arm64" -o /bin/pnpm; \
     fi \
   && chmod +x /bin/pnpm \
