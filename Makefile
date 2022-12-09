@@ -78,7 +78,7 @@ ssh: ## Login into built image
 .PHONY: ssh
 
 hadolint:  ## Run hadolint over dist Dockerfiles
-	hadolint -V ./dist/alpine/Dockerfile
+	hadolint -V ./dist/$(TEMPLATE)/Dockerfile
 .PHONY: hadolint
 
 

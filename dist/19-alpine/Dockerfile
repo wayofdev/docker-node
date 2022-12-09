@@ -22,20 +22,12 @@ RUN set -eux; \
   apk add --no-cache \
     curl \
     git \
-    # For vercel/turbo
     libc6-compat \
-  && /bin/ash -c 'set -ex && \
-    ARCH=`uname -m` && \
-      if [ "$ARCH" == "x86_64" ]; then \
-        echo "x86_64" && \
-        curl -fsSL "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64" -o /bin/pnpm; \
-      elif [ "ARCH" == "arm64" ]; then \
-        echo "arm64" && \
-        curl -fsSL "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-arm64" -o /bin/pnpm; \
-      else \
-         echo "unknown arch" && \
-         curl -fsSL "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-arm64" -o /bin/pnpm; \
-      fi' \
+  && ARCH=$(uname -m) &&  \
+    if [ "$ARCH" = "x86_64" ]; then \
+      curl -fsSL "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-x64" -o /bin/pnpm; \
+    elif [ "$ARCH" == "aarch64" ]; then \
+      curl -fsSL "https://github.com/pnpm/pnpm/releases/latest/download/pnpm-linuxstatic-arm64" -o /bin/pnpm; \
+    fi \
   && chmod +x /bin/pnpm \
-  # https://github.com/vercel/turbo/issues/2198
   && yarn global add turbo

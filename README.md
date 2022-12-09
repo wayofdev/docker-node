@@ -26,9 +26,11 @@ This image is used together with [wayofdev/docker-php-dev](https://github.com/wa
 Has pre-installed packages
 
 * [pnpm](https://pnpm.io/) — Fast, disk space efficient package manager
+* [turbo](https://github.com/vercel/turbo) — Incremental bundler and build system optimized for JavaScript and TypeScript, written in Rust – including Turbopack and Turborepo.
 * alpine packages:
   * git
   * curl
+  * libc6-compat — [turbo dependency](https://github.com/vercel/turbo/issues/2198), starting from `^1.5.6`
 
 If you **like/use** this repository, please consider **starring** it. Thanks!
 
@@ -57,7 +59,8 @@ $ make generate
 Building default image:
 
 ```bash
-$ git clone git@github.com:wayofdev/docker-node.git
+$ git clone git@github.com:wayofdev/docker-node.git && cd docker-node
+$ make generate #(optional, to re-create /dist from /src)
 $ make build
 ```
 
@@ -70,6 +73,7 @@ $ make
 Building all images:
 
 ```bash
+$ make build TEMPLATE="lts-alpine"
 $ make build TEMPLATE="19-alpine"
 $ make build TEMPLATE="18-alpine"
 ```
@@ -87,6 +91,7 @@ $ make test
 To test all images:
 
 ```bash
+$ make test TEMPLATE="lts-alpine"
 $ make test TEMPLATE="19-alpine"
 $ make test TEMPLATE="18-alpine"
 ```
