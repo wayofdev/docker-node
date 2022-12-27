@@ -1,5 +1,17 @@
 # Changelog
 
+## [1.3.0](https://github.com/wayofdev/docker-node/compare/v1.2.0...v1.3.0) (2022-12-20)
+
+
+### Features
+
+* update pnpm binary ([6fa9add](https://github.com/wayofdev/docker-node/commit/6fa9addb9fab88db3213e8893cfd28e030d013c8))
+
+
+### Bug Fixes
+
+* pnpm version download link wrong ([a0671ce](https://github.com/wayofdev/docker-node/commit/a0671ce9fe4b5429ae5f3a9f61a0085563f8a3ce))
+
 ## [1.2.0](https://github.com/wayofdev/docker-node/compare/v1.1.0...v1.2.0) (2022-12-09)
 
 
