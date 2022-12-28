@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.4.0](https://github.com/wayofdev/docker-node/compare/v1.3.0...v1.4.0) (2022-12-28)
+
+
+### Features
+
+* pnpm 7.20.0 ([8319882](https://github.com/wayofdev/docker-node/commit/8319882568b27b51177981e8d95efd764fbddd96))
+
 ## [1.3.0](https://github.com/wayofdev/docker-node/compare/v1.2.0...v1.3.0) (2022-12-20)
 
 
