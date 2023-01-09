@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.6.0](https://github.com/wayofdev/docker-node/compare/v1.5.0...v1.6.0) (2023-01-04)
+
+
+### Features
+
+* update pnpm ([b495892](https://github.com/wayofdev/docker-node/commit/b495892b3c1f62871995f5566bc7c32fccc4c990))
+
 ## [1.5.0](https://github.com/wayofdev/docker-node/compare/v1.4.0...v1.5.0) (2022-12-29)
 
 
