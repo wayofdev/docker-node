@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.7.0](https://github.com/wayofdev/docker-node/compare/v1.6.0...v1.7.0) (2023-01-15)
+
+
+### Features
+
+* **deps:** update pnpm to 7.25.0 ([b6e28b3](https://github.com/wayofdev/docker-node/commit/b6e28b3ed820198fff0319270364543ede8a5448))
+
 ## [1.6.0](https://github.com/wayofdev/docker-node/compare/v1.5.0...v1.6.0) (2023-01-04)
 
 
