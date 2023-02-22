@@ -33,6 +33,9 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v3.3.0
 
+      - name: Generate dist files
+        run: make generate
+
       - name: Set Environment Variables
         env:
           IMAGE_NAMESPACE: wayofdev/node
@@ -75,6 +78,16 @@ jobs:
         with:
           install: true
 
+      - name: Set tag for Docker Release Image
+        if: success() && startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo "IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-${{ env.VERSION }}" >> $GITHUB_ENV
+
+      - name: Set tag for Docker Master Image
+        if: success() && ! startsWith(github.ref, 'refs/tags/')
+        run: |
+          echo "IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-latest" >> $GITHUB_ENV
+
       - name: Build and Export to Docker
         uses: docker/build-push-action@v4
         with:
@@ -85,17 +98,9 @@ jobs:
           cache-to: type=inline
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Test Docker Release Image
-        if: success() && startsWith(github.ref, 'refs/tags/')
+      - name: Test Docker Image
         run: |
-          echo "IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-${{ env.VERSION }}" >> $GITHUB_ENV
-          IMAGE_TAG=${{ env.IMAGE_TAG }} make test
-
-      - name: Test Docker Master Image
-        if: success() && ! startsWith(github.ref, 'refs/tags/')
-        run: |
-          echo "IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-latest" >> $GITHUB_ENV
-          IMAGE_TAG=${{ env.IMAGE_TAG }} make test
+          export IMAGE_TAG=${{ env.IMAGE_TAG }}; make test
 
       - name: Push Docker Image
         uses: docker/build-push-action@v4

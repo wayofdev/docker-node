@@ -25,9 +25,9 @@ RUN set -eux; \
     libc6-compat \
   && ARCH=$(uname -m) &&  \
     if [ "$ARCH" = "x86_64" ]; then \
-      curl -fsSL "https://github.com/pnpm/pnpm/releases/download/v7.26.1/pnpm-linuxstatic-x64" -o /bin/pnpm; \
+      curl -fsSL "https://github.com/pnpm/pnpm/releases/download/v7.25.0/pnpm-linuxstatic-x64" -o /bin/pnpm; \
     elif [ "$ARCH" = "aarch64" ]; then \
-      curl -fsSL "https://github.com/pnpm/pnpm/releases/download/v7.26.1/pnpm-linuxstatic-arm64" -o /bin/pnpm; \
+      curl -fsSL "https://github.com/pnpm/pnpm/releases/download/v7.25.0/pnpm-linuxstatic-arm64" -o /bin/pnpm; \
     fi \
   && chmod +x /bin/pnpm \
   && yarn global add turbo
