@@ -3,10 +3,18 @@
     "extends": [
         "config:base"
     ],
-    "enabledManagers": ["npm", "dockerfile", "ansible", "github-actions"],
-    "ansible": {
-        "fileMatch": [
-            "src/group_vars/all\\.ya?ml$"
-        ]
-    }
+    "fileList": [
+        "src/group_vars/all.yml"
+    ],
+    "packageRules": [
+        {
+            "updateTypes": [
+                "minor",
+                "patch"
+            ],
+            "packagePatterns": [
+                "pnpm"
+            ]
+        }
+    ]
 }
