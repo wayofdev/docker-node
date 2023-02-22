@@ -3,7 +3,7 @@
     "extends": [
         "config:base"
     ],
-    "enabledManagers": ["npm", "dockerfile", "ansible"],
+    "enabledManagers": ["npm", "dockerfile", "ansible", "github-actions"],
     "ansible": {
         "fileMatch": [
             "src/group_vars/all\\.ya?ml$"
