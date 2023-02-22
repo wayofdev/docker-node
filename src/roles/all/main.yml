@@ -9,6 +9,15 @@
   with_items:
     - "{{ tpl_directories }}"
 
+- name: Get latest pnpm version
+  shell: cat ./../package.json | jq -r '.dependencies."pnpm"'
+  register: pnpm_version
+  changed_when: false
+
+- name: Set pnpm_version
+  set_fact:
+    pnpm_version: "{{ pnpm_version.stdout | regex_replace('^(\\^)', '') }}"
+
 - name: Generate Dockerfiles
   template:
     src: "{{ item.src }}"
