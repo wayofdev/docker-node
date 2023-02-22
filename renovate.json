@@ -3,14 +3,10 @@
     "extends": [
         "config:base"
     ],
-    "packageRules": [
-        {
-            "packageNames": [
-                "pnpm"
-            ],
-            "fileMatch": [
-                "src/group_vars/all\\.ya?ml$"
-            ]
-        }
-    ]
+    "enabledManagers": ["npm", "dockerfile", "ansible"],
+    "ansible": {
+        "fileMatch": [
+            "src/group_vars/all\\.ya?ml$"
+        ]
+    }
 }
