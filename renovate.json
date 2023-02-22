@@ -11,16 +11,7 @@
             "manager": "ansible",
             "fileMatch": [
                 "src/group_vars/all\\.ya?ml$"
-            ],
-            "updateTypes": [
-                "semver"
-            ],
-            "datasourceTemplate": "ansible",
-            "datasourceArgs": {
-                "fileMatch": "src/group_vars/all.yml",
-                "section": "vars",
-                "key": "pnpm_version"
-            }
+            ]
         }
     ]
 }
