@@ -1,5 +1,24 @@
 # Changelog
 
+## [1.8.0](https://github.com/wayofdev/docker-node/compare/v1.7.0...v1.8.0) (2023-02-22)
+
+
+### Features
+
+* update pnpm ([c15f739](https://github.com/wayofdev/docker-node/commit/c15f739a7489d66be0e9067d66235521012ddb01))
+
+
+### Bug Fixes
+
+* failing github ci ([c1c4317](https://github.com/wayofdev/docker-node/commit/c1c43178fff7d6c0ceb86711e3169a0e7e975765))
+* IMAGE_TAG should be defined before build ([f46dacf](https://github.com/wayofdev/docker-node/commit/f46dacf407bd6d0423282f407d74a6e4ce033485))
+* missing IMAGE_TAG ([93037f7](https://github.com/wayofdev/docker-node/commit/93037f7a4cab750c091633e2f1c3d88b99776f3e))
+
+
+### Miscellaneous
+
+* changes ([a35f9ee](https://github.com/wayofdev/docker-node/commit/a35f9ee8f40425b7cc28c6408a156c6cc4cad340))
+
 ## [1.7.0](https://github.com/wayofdev/docker-node/compare/v1.6.0...v1.7.0) (2023-01-15)
 
 
