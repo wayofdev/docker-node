@@ -8,7 +8,6 @@
             "packageNames": [
                 "pnpm"
             ],
-            "manager": "ansible",
             "fileMatch": [
                 "src/group_vars/all\\.ya?ml$"
             ]
