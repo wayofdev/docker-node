@@ -37,9 +37,4 @@ tpl_docker_tests:
   - src: Dockerfiles/all/goss.yaml.j2
     dst: "../dist/{{ node_version }}-{{ os_name }}/goss.yaml"
 
-
-# Enabled extensions
-########################################################################################################################
-pnpm_version: 7.25.0
-
 ...

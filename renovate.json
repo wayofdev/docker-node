@@ -2,19 +2,5 @@
     "$schema": "https://docs.renovatebot.com/renovate-schema.json",
     "extends": [
         "config:base"
-    ],
-    "npm": {
-        "fileMatch": ["src/group_vars/all.yml", "package.json"]
-    },
-    "packageRules": [
-        {
-            "updateTypes": [
-                "minor",
-                "patch"
-            ],
-            "depTypeList": [
-                "npm"
-            ]
-        }
     ]
 }

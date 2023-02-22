@@ -21,34 +21,37 @@
 
 # Docker Image: NodeJs Devel
 
-This image is used together with [wayofdev/docker-php-dev](https://github.com/wayofdev/docker-php-dev) and other WOD images, to create local development environment for our projects.
+This image is used in conjunction with [wayofdev/docker-php-dev](https://github.com/wayofdev/docker-php-dev) and other WOD images to create a local development environment for our projects.
 
-Has pre-installed packages
+## Pre-installed Packages
 
-* [pnpm](https://pnpm.io/) — Fast, disk space efficient package manager
-* [turbo](https://github.com/vercel/turbo) — Incremental bundler and build system optimized for JavaScript and TypeScript, written in Rust – including Turbopack and Turborepo.
-* alpine packages:
-  * git
-  * curl
-  * libc6-compat — [turbo dependency](https://github.com/vercel/turbo/issues/2198), starting from `^1.5.6`
+- [pnpm](https://pnpm.io/) - Fast, disk space efficient package manager
+- [turbo](https://github.com/vercel/turbo) - Incremental bundler and build system optimized for JavaScript and TypeScript, written in Rust. Includes Turbopack and Turborepo.
+- Alpine packages:
+  - git
+  - curl
+  - libc6-compat - [turbo dependency](https://github.com/vercel/turbo/issues/2198), starting from `^1.5.6`
 
-If you **like/use** this repository, please consider **starring** it. Thanks!
+If you find this repository useful, please consider giving it a star. Thank you!
 
 ![Screenshot](assets/screenshot.png)
 
 ## ⚙️ Development
 
-To install dependencies and start development you can check contents of our `Makefile`
+To install dependencies and start development, please check the contents of our `Makefile`.
 
 ### →  Requirements
 
-For testing purposes we use **goss** and **dgoss**, follow installation instructions on [their official README](https://github.com/aelsabbahy/goss/blob/master/extras/dgoss/README.md)
+To install dependencies and start development, please check the contents of our `Makefile`. You will need to have the following tools installed on your machine:
+
+- **jq** - A lightweight and flexible command-line JSON processor. Please refer to the [official installation instructions](https://stedolan.github.io/jq/download/) to install `jq`.
+- **goss** and **dgoss** - For testing purposes. Please follow the installation instructions provided in their [official README](https://github.com/aelsabbahy/goss/blob/master/extras/dgoss/README.md).
 
 <br>
 
 ### → Building locally
 
-Generating distributable Dockerfiles from yaml source code:
+To generate distributable Dockerfiles from the YAML source code, run the following command:
 
 ```bash
 $ make generate
@@ -56,7 +59,7 @@ $ make generate
 
 <br>
 
-Building default image:
+To build the default image, run the following commands:
 
 ```bash
 $ git clone git@github.com:wayofdev/docker-node.git && cd docker-node
@@ -64,13 +67,13 @@ $ make generate #(optional, to re-create /dist from /src)
 $ make build
 ```
 
-To **build** image, **test** it and then **clean** temporary files run:
+To **build** the image, **test** it, and then **clean** temporary files, run the following command:
 
 ```bash
 $ make
 ```
 
-Building all images:
+To build all images, run the following commands:
 
 ```bash
 $ make build TEMPLATE="lts-alpine"
@@ -82,13 +85,13 @@ $ make build TEMPLATE="18-alpine"
 
 ## 🧪 Testing
 
-Testing default image:
+To test the default image, run the following command:
 
 ```bash
 $ make test
 ```
 
-To test all images:
+To test all images, run the following commands:
 
 ```bash
 $ make test TEMPLATE="lts-alpine"
@@ -100,13 +103,13 @@ $ make test TEMPLATE="18-alpine"
 
 ### → Code quality tools
 
-Run **yamllint** to validate all yaml files in project:
+To validate all YAML files in the project, run the following command:
 
 ```bash
 $ make lint
 ```
 
-Run hadolint to validate created Dockerfiles:
+To validate the created Dockerfiles, run the following command:
 
 ```bash
 $ make hadolint
