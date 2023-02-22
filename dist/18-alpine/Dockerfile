@@ -1,6 +1,6 @@
 # Auto-generated via Ansible: edit src/Dockerfiles/all/Dockerfile.j2 instead.
 
-FROM node:18-alpine
+FROM node:19-alpine
 
 # Labels
 # https://github.com/opencontainers/image-spec/blob/main/annotations.md
