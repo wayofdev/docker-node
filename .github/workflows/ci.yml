@@ -88,12 +88,14 @@ jobs:
       - name: Test Docker Release Image
         if: success() && startsWith(github.ref, 'refs/tags/')
         run: |
-          IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-${{ env.VERSION }} make test
+          echo "IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-${{ env.VERSION }}" >> $GITHUB_ENV
+          IMAGE_TAG=${{ env.IMAGE_TAG }} make test
 
       - name: Test Docker Master Image
         if: success() && ! startsWith(github.ref, 'refs/tags/')
         run: |
-          IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-latest make test
+          echo "IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-latest" >> $GITHUB_ENV
+          IMAGE_TAG=${{ env.IMAGE_TAG }} make test
 
       - name: Push Docker Image
         uses: docker/build-push-action@v4
