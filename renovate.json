@@ -3,11 +3,11 @@
     "extends": [
         "config:base"
     ],
+    "npm": {
+        "fileMatch": ["src/group_vars/all.yml", "package.json"]
+    },
     "packageRules": [
         {
-            "npm": {
-                "fileMatch": ["src/group_vars/all.yml"]
-            },
             "updateTypes": [
                 "minor",
                 "patch"
