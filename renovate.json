@@ -4,5 +4,8 @@
         "config:base"
     ],
     "automerge": true,
-    "platformAutomerge": true
+    "platformAutomerge": true,
+    "ignorePaths": [
+        "dist/18-alpine/Dockerfile"
+    ]
 }
