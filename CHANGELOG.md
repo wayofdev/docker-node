@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.8.1](https://github.com/wayofdev/docker-node/compare/v1.8.0...v1.8.1) (2023-02-25)
+
+
+### Bug Fixes
+
+* define strict versions ([e92cd87](https://github.com/wayofdev/docker-node/commit/e92cd8738e5dff5305245523d8957a22f2118f75))
+
 ## [1.8.0](https://github.com/wayofdev/docker-node/compare/v1.7.0...v1.8.0) (2023-02-22)
 
 
