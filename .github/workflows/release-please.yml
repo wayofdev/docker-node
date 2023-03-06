@@ -13,6 +13,18 @@ jobs:
   release-please:
     runs-on: ubuntu-latest
     steps:
+      - name: 📦 Check out the codebase
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
+
+      - name: 🚀 Generate dist files
+        run: make generate
+
+      - name: 🗜️ Archive dist files
+        run: tar -czvf dist.tar.gz dist
+
+      - name: 🎉 Create release
       - uses: google-github-actions/release-please-action@v3
         id: release
         with:
@@ -35,5 +47,11 @@ jobs:
               { "type": "build", "section": "Build System", "hidden": true },
               { "type": "ci", "section": "Continuous Integration", "hidden": true }
             ]
+
+      - name: 📤 Upload release assets
+        uses: actions/upload-artifact@v3
+        with:
+          name: Dockerfiles
+          path: dist.tar.gz
 
 ...

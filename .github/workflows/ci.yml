@@ -20,13 +20,12 @@ on:  # yamllint disable-line rule:truthy
 
 jobs:
   build:
-    name: Build
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
       matrix:
-        node_version: ['lts', '19', '18']
-        os_name: ['alpine']
+        node_version: [ 'lts', '19', '18' ]
+        os_name: [ 'alpine' ]
     steps:
       - uses: e1himself/goss-installation-action@v1.1.0
 
