@@ -1,5 +1,19 @@
 # Changelog
 
+## [1.9.0](https://github.com/wayofdev/docker-node/compare/v1.8.3...v1.9.0) (2023-03-06)
+
+
+### Features
+
+* dist will be attached into releases ([5abbafa](https://github.com/wayofdev/docker-node/commit/5abbafad8370a9876e3c67cc7d08ba159955327b))
+* generate dist on the fly ([acfb2bd](https://github.com/wayofdev/docker-node/commit/acfb2bdb49162d6c1eb5800c0232996ece681c8f))
+
+
+### Bug Fixes
+
+* remove dist ([3ccd654](https://github.com/wayofdev/docker-node/commit/3ccd654f44fae40ac399aaab16e441dae717aa72))
+* typo ([c50789c](https://github.com/wayofdev/docker-node/commit/c50789ce4a0235df1f1bff934752f6729bf1404a))
+
 ## [1.8.3](https://github.com/wayofdev/docker-node/compare/v1.8.2...v1.8.3) (2023-03-06)
 
 
