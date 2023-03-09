@@ -106,13 +106,13 @@ $ make test TEMPLATE="18-alpine"
 To validate all YAML files in the project, run the following command:
 
 ```bash
-$ make lint
+$ make lint-yaml
 ```
 
 To validate the created Dockerfiles, run the following command:
 
 ```bash
-$ make hadolint
+$ make lint-docker
 ```
 
 <br>
