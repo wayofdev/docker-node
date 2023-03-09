@@ -1,5 +1,18 @@
 # Changelog
 
+## [1.10.0](https://github.com/wayofdev/docker-node/compare/v1.9.0...v1.10.0) (2023-03-09)
+
+
+### Features
+
+* automate dist upload ([c9bc01b](https://github.com/wayofdev/docker-node/commit/c9bc01b5afd70ca5d6f20e767b1ef59e278f4ce8))
+
+
+### Bug Fixes
+
+* **deps:** update dependency pnpm to v7.29.1 ([#29](https://github.com/wayofdev/docker-node/issues/29)) ([1421046](https://github.com/wayofdev/docker-node/commit/142104684efbb68f95fc918d68587cdb50c8a5ad))
+* pass gh token ([73d96ba](https://github.com/wayofdev/docker-node/commit/73d96bab08b89f5945e72103c1ebe80a387a0d73))
+
 ## [1.9.0](https://github.com/wayofdev/docker-node/compare/v1.8.3...v1.9.0) (2023-03-06)
 
 
