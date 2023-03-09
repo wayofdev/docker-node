@@ -1,9 +1,9 @@
 ---
 
-name: Differential ShellCheck
-
 on:  # yamllint disable-line rule:truthy
   pull_request:
+
+name: 🐞 Differential shell-check
 
 permissions:
   contents: read
@@ -13,12 +13,12 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-      - name: Repository checkout
-        uses: actions/checkout@v3.3.0
+      - name: 📦 Check out the codebase
+        uses: actions/checkout@v3
         with:
           fetch-depth: 0
 
-      - name: Differential ShellCheck
+      - name: 🐞 Differential shell-check
         uses: redhat-plumbers-in-action/differential-shellcheck@v4
         with:
           severity: warning
