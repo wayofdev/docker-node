@@ -1,6 +1,6 @@
 ---
 
-name: CI
+name: 🔍 Continuous integration
 
 on:  # yamllint disable-line rule:truthy
   push:
@@ -27,15 +27,18 @@ jobs:
         node_version: [ 'lts', '19', '18' ]
         os_name: [ 'alpine' ]
     steps:
-      - uses: e1himself/goss-installation-action@v1.1.0
+      - name: 📦 Install goss
+        uses: e1himself/goss-installation-action@v1.1.0
 
-      - name: Checkout
-        uses: actions/checkout@v3.3.0
+      - name: 📦 Check out the codebase
+        uses: actions/checkout@v3
+        with:
+          fetch-depth: 0
 
-      - name: Generate dist files
+      - name: 🤖 Generate dist files
         run: make generate
 
-      - name: Set Environment Variables
+      - name: 🌎 Set environment variables
         env:
           IMAGE_NAMESPACE: wayofdev/node
           TEMPLATE: ${{ matrix.node_version }}-${{ matrix.os_name }}
@@ -45,7 +48,7 @@ jobs:
           echo "TEMPLATE=${TEMPLATE}" >> $GITHUB_ENV
           echo "VERSION=${RELEASE_VERSION:1}" >> $GITHUB_ENV
 
-      - name: Docker Meta
+      - name: 🐳 Define docker meta
         id: meta
         uses: docker/metadata-action@v4
         with:
@@ -59,7 +62,7 @@ jobs:
             latest=false
             prefix=${{ matrix.node_version }}-${{ matrix.os_name }}-
 
-      - name: Login to DockerHub
+      - name: 🔑 Login to docker-hub
         if: github.event_name != 'pull_request'
         uses: docker/login-action@v2
         with:
@@ -67,27 +70,27 @@ jobs:
           password: ${{ secrets.DOCKER_TOKEN }}
 
       ### For Cross Platform OSX builds uncomment these lines
-      - name: Set up QEMU
+      - name: 🖥️ Set up QEMU
         uses: docker/setup-qemu-action@v2
         with:
           platforms: arm64
 
-      - name: Set up Docker BuildX
+      - name: 🚀 Set up Docker BuildX
         uses: docker/setup-buildx-action@v2
         with:
           install: true
 
-      - name: Set tag for Docker Release Image
+      - name: 🏷️ Set tag for docker release image
         if: success() && startsWith(github.ref, 'refs/tags/')
         run: |
           echo "IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-${{ env.VERSION }}" >> $GITHUB_ENV
 
-      - name: Set tag for Docker Master Image
+      - name: 🏷️ Set tag for docker master image
         if: success() && ! startsWith(github.ref, 'refs/tags/')
         run: |
           echo "IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-latest" >> $GITHUB_ENV
 
-      - name: Build and Export to Docker
+      - name: 🛠️ Build and export to docker
         uses: docker/build-push-action@v4
         with:
           context: ./dist/${{ env.TEMPLATE }}
@@ -97,11 +100,11 @@ jobs:
           cache-to: type=inline
           labels: ${{ steps.meta.outputs.labels }}
 
-      - name: Test Docker Image
+      - name: 🧪 Test docker image
         run: |
           export IMAGE_TAG=${{ env.IMAGE_TAG }}; make test
 
-      - name: Push Docker Image
+      - name: 📤 Push docker image
         uses: docker/build-push-action@v4
         with:
           context: ./dist/${{ env.TEMPLATE }}
