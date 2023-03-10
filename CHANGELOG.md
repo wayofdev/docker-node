@@ -1,5 +1,20 @@
 # Changelog
 
+## [1.11.0](https://github.com/wayofdev/docker-node/compare/v1.10.0...v1.11.0) (2023-03-10)
+
+
+### Features
+
+* add actionlint ([8ec6f06](https://github.com/wayofdev/docker-node/commit/8ec6f06051b6774c647c35117b3af4eacfa6cfb2))
+* auto-merge releases ([5cd38be](https://github.com/wayofdev/docker-node/commit/5cd38be3930cfa6ef56955d680c6b091711b796d))
+
+
+### Bug Fixes
+
+* also auto-merge if pr was created previously ([39636aa](https://github.com/wayofdev/docker-node/commit/39636aa1532ce0e61b69dc568ccada60929217ac))
+* also auto-merge if pr was created previously ([35ec004](https://github.com/wayofdev/docker-node/commit/35ec004343d8cd55fe3529eb5e417c6d444bfb89))
+* remove unused dependabot ([09bf338](https://github.com/wayofdev/docker-node/commit/09bf3383c9582a5642b1bbea97cdb94e5ec4ff48))
+
 ## [1.10.0](https://github.com/wayofdev/docker-node/compare/v1.9.0...v1.10.0) (2023-03-09)
 
 
