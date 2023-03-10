@@ -4,8 +4,6 @@
 
 on:  # yamllint disable-line rule:truthy
   pull_request:
-    branches:
-      - 'release-please--*'
 
 permissions:
   pull-requests: write
@@ -15,7 +13,7 @@ name: 🤞 Auto merge release
 
 jobs:
   auto-merge:
-    if: github.actor == 'lotyp'
+    if: github.actor == 'lotyp' && startsWith(github.head_ref, 'release-please--')
     runs-on: ubuntu-latest
     steps:
       - name: 🤞 Auto-merge pull request
