@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.11.1](https://github.com/wayofdev/docker-node/compare/v1.11.0...v1.11.1) (2023-03-10)
+
+
+### Miscellaneous
+
+* changes in auto-merge ([ae78ebf](https://github.com/wayofdev/docker-node/commit/ae78ebf371828bdb94ee600aaaedc6c1e1b6711c))
+
 ## [1.11.0](https://github.com/wayofdev/docker-node/compare/v1.10.0...v1.11.0) (2023-03-10)
 
 
