@@ -17,7 +17,7 @@ permissions:
 name: 🤞 Auto merge release
 
 jobs:
-  upload-artifacts:
+  auto-merge:
     if: github.actor == 'lotyp'
     runs-on: ubuntu-latest
     steps:
