@@ -10,7 +10,7 @@ on:  # yamllint disable-line rule:truthy
 name: 📦 Create release
 
 jobs:
-  release-please:
+  release:
     runs-on: ubuntu-latest
     steps:
       - name: 📦 Check out the codebase

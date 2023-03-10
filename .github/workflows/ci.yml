@@ -20,6 +20,7 @@ on:  # yamllint disable-line rule:truthy
 
 jobs:
   build:
+    name: 🧪 Testing on Node ${{ matrix.node_version }} - ${{ matrix.os_name }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
