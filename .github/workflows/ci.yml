@@ -1,7 +1,5 @@
 ---
 
-name: 🔍 Continuous integration
-
 on:  # yamllint disable-line rule:truthy
   push:
     branches:
@@ -18,9 +16,10 @@ on:  # yamllint disable-line rule:truthy
     # Every Sunday at 01:10
     - cron: '10 1 * * 0'
 
+name: 🔍 Continuous integration
+
 jobs:
   build:
-    name: 🧪 Testing on Node ${{ matrix.node_version }} - ${{ matrix.os_name }}
     runs-on: ubuntu-latest
     strategy:
       fail-fast: false
@@ -44,10 +43,12 @@ jobs:
           IMAGE_NAMESPACE: wayofdev/node
           TEMPLATE: ${{ matrix.node_version }}-${{ matrix.os_name }}
         run: |
-          export RELEASE_VERSION=${GITHUB_REF#refs/*/}
-          echo "IMAGE_NAMESPACE=${IMAGE_NAMESPACE}" >> $GITHUB_ENV
-          echo "TEMPLATE=${TEMPLATE}" >> $GITHUB_ENV
-          echo "VERSION=${RELEASE_VERSION:1}" >> $GITHUB_ENV
+          export RELEASE_VERSION="${GITHUB_REF#refs/*/}" \
+          && { \
+            echo "IMAGE_NAMESPACE=${IMAGE_NAMESPACE}"; \
+            echo "TEMPLATE=${TEMPLATE}"; \
+            echo "VERSION=${RELEASE_VERSION:1}"; \
+          } >> "$GITHUB_ENV"
 
       - name: 🐳 Define docker meta
         id: meta
@@ -84,12 +85,12 @@ jobs:
       - name: 🏷️ Set tag for docker release image
         if: success() && startsWith(github.ref, 'refs/tags/')
         run: |
-          echo "IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-${{ env.VERSION }}" >> $GITHUB_ENV
+          echo "IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-${{ env.VERSION }}" >> "$GITHUB_ENV"
 
       - name: 🏷️ Set tag for docker master image
         if: success() && ! startsWith(github.ref, 'refs/tags/')
         run: |
-          echo "IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-latest" >> $GITHUB_ENV
+          echo "IMAGE_TAG=${{ env.IMAGE_NAMESPACE }}:${{ env.TEMPLATE }}-latest" >> "$GITHUB_ENV"
 
       - name: 🛠️ Build and export to docker
         uses: docker/build-push-action@v4
