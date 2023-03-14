@@ -21,6 +21,7 @@ jobs:
         with:
           pull-request-number: ${{ github.event.pull_request.number }}
           merge-method: merge
+          # to trigger other workflows, pass PAT token instead of GITHUB_TOKEN
           token: ${{ secrets.PERSONAL_GITHUB_TOKEN }}
 
 ...

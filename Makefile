@@ -59,7 +59,7 @@ help: ## Show this menu
 # Default action
 # Defines default command when `make` is executed without additional parameters
 # ------------------------------------------------------------------------------------
-all: build hooks
+all: hooks build
 .PHONY: all
 
 
