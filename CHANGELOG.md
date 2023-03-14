@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.0](https://github.com/wayofdev/docker-node/compare/v1.11.1...v1.12.0) (2023-03-14)
+
+
+### Features
+
+* updating workflow ([6bf8ebf](https://github.com/wayofdev/docker-node/commit/6bf8ebf50550205e5c7f6d628a18fe804180f255))
+
 ## [1.11.1](https://github.com/wayofdev/docker-node/compare/v1.11.0...v1.11.1) (2023-03-10)
 
 
