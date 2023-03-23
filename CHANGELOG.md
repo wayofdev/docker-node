@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.12.3](https://github.com/wayofdev/docker-node/compare/v1.12.2...v1.12.3) (2023-03-23)
+
+
+### Miscellaneous
+
+* **deps:** update peter-evans/enable-pull-request-automerge action to v3 ([a8dc13a](https://github.com/wayofdev/docker-node/commit/a8dc13adde840ec5ef52e60e214bf5fb556bfff8))
+
 ## [1.12.2](https://github.com/wayofdev/docker-node/compare/v1.12.1...v1.12.2) (2023-03-19)
 
 
