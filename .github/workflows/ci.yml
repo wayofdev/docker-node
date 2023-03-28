@@ -35,9 +35,6 @@ jobs:
         with:
           fetch-depth: 0
 
-      - name: 🤖 Generate dist files
-        run: make generate
-
       - name: 🌎 Set environment variables
         env:
           IMAGE_NAMESPACE: wayofdev/node
@@ -49,6 +46,9 @@ jobs:
             echo "TEMPLATE=${TEMPLATE}"; \
             echo "VERSION=${RELEASE_VERSION:1}"; \
           } >> "$GITHUB_ENV"
+
+      - name: 🤖 Generate dist files
+        run: make generate
 
       - name: 🐳 Define docker meta
         id: meta
