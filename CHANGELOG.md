@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.2](https://github.com/wayofdev/docker-node/compare/v1.14.1...v1.14.2) (2023-05-17)
+
+
+### Bug Fixes
+
+* version tag ([fc0b385](https://github.com/wayofdev/docker-node/commit/fc0b385bbf1f9b1a4be37ea3f79fb6893719ab4d))
+
 ## [1.14.1](https://github.com/wayofdev/docker-node/compare/v1.14.0...v1.14.1) (2023-05-17)
 
 
