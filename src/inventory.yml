@@ -8,9 +8,9 @@ all:
           ansible_connection: local
           node_version: lts
           os_name: alpine
-        19-alpine:
+        20-alpine:
           ansible_connection: local
-          node_version: 19
+          node_version: 20
           os_name: alpine
         18-alpine:
           ansible_connection: local
