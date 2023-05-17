@@ -35,6 +35,7 @@ jobs:
       os: "ubuntu-latest"
       push-to-hub: ${{ github.event_name != 'pull_request' }}
       image-namespace: "wayofdev/node"
+      image-template-path: "./dist"
       image-template: ${{ matrix.node_version }}-${{ matrix.os_name }}
       image-version: latest
     secrets:

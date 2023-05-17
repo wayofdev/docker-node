@@ -36,6 +36,7 @@ jobs:
       os: "ubuntu-latest"
       push-to-hub: true
       image-namespace: "wayofdev/node"
+      image-template-path: "./dist"
       image-template: ${{ matrix.node_version }}-${{ matrix.os_name }}
       image-version: ${{ needs.prepare.outputs.version }}
     secrets:
