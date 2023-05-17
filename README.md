@@ -13,7 +13,7 @@
 <a href="https://actions-badge.atrox.dev/wayofdev/docker-node/goto"><img alt="Build Status" src="https://img.shields.io/endpoint.svg?url=https%3A%2F%2Factions-badge.atrox.dev%2Fwayofdev%2Fdocker-node%2Fbadge&style=flat-square"/></a>
 <a href="https://github.com/wayofdev/docker-node/tags"><img src="https://img.shields.io/github/v/tag/wayofdev/docker-node?sort=semver&style=flat-square" alt="Latest Version"></a>
 <a href="https://hub.docker.com/repository/docker/wayofdev/node"><img alt="Docker Pulls" src="https://img.shields.io/docker/pulls/wayofdev/node?style=flat-square"></a>
-<a href="LICENSE"><img src="https://img.shields.io/github/license/wayofdev/docker-node.svg?style=flat-square&color=blue" alt="Software License"/></a>
+<a href="LICENSE.md"><img src="https://img.shields.io/github/license/wayofdev/docker-node.svg?style=flat-square&color=blue" alt="Software License"/></a>
 <a href="#"><img alt="Commits since latest release" src="https://img.shields.io/github/commits-since/wayofdev/docker-node/latest?style=flat-square"></a>
 </div>
 
@@ -76,9 +76,9 @@ $ make
 To build all images, run the following commands:
 
 ```bash
-$ make build TEMPLATE="lts-alpine"
-$ make build TEMPLATE="19-alpine"
-$ make build TEMPLATE="18-alpine"
+$ make build IMAGE_TEMPLATE="lts-alpine"
+$ make build IMAGE_TEMPLATE="19-alpine"
+$ make build IMAGE_TEMPLATE="18-alpine"
 ```
 
 <br>
@@ -94,9 +94,9 @@ $ make test
 To test all images, run the following commands:
 
 ```bash
-$ make test TEMPLATE="lts-alpine"
-$ make test TEMPLATE="19-alpine"
-$ make test TEMPLATE="18-alpine"
+$ make test IMAGE_TEMPLATE="lts-alpine"
+$ make test IMAGE_TEMPLATE="19-alpine"
+$ make test IMAGE_TEMPLATE="18-alpine"
 ```
 
 <br>
@@ -138,4 +138,3 @@ This repository was created in **2022** by [lotyp / wayofdev](https://github.com
 </a>
 
 <br>
-
