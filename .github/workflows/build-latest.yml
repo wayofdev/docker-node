@@ -33,7 +33,7 @@ jobs:
     uses: wayofdev/gh-actions/.github/workflows/build-image.yml@master
     with:
       os: "ubuntu-latest"
-      push-to-hub: ${{ github.event_name != 'pull_request' }}
+      push-to-hub: true
       image-namespace: "wayofdev/node"
       image-template-path: "./dist"
       image-template: ${{ matrix.node_version }}-${{ matrix.os_name }}
