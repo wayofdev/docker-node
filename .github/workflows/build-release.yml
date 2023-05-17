@@ -13,6 +13,7 @@ jobs:
     runs-on: "ubuntu-latest"
     outputs:
       matrix: ${{ steps.matrix.outputs.matrix }}
+      version: ${{ steps.version.outputs.version }}
     steps:
       - name: ⚙️ Generate matrix
         id: matrix
