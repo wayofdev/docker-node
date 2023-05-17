@@ -1,7 +1,7 @@
 ---
 
 - name: Create dist directories
-  file:
+  ansible.builtin.file:
     path: "{{ item.path }}"
     state: directory
     mode: 0775
@@ -10,7 +10,7 @@
     - "{{ tpl_directories }}"
 
 - name: Get latest pnpm version
-  shell: cat ./../package.json | jq -r '.dependencies."pnpm"'
+  ansible.builtin.shell: cat ./../package.json | jq -r '.dependencies."pnpm"'
   register: pnpm_version
   changed_when: false
 
@@ -19,7 +19,7 @@
     pnpm_version: "{{ pnpm_version.stdout | regex_replace('^(\\^)', '') }}"
 
 - name: Generate Dockerfiles
-  template:
+  ansible.builtin.template:
     src: "{{ item.src }}"
     dest: "{{ item.dst }}"
     force: true
@@ -28,7 +28,7 @@
     - "{{ tpl_dockerfiles }}"
 
 - name: Generate Dockerfile dgoss tests
-  template:
+  ansible.builtin.template:
     src: "{{ item.src }}"
     dest: "{{ item.dst }}"
     force: true
