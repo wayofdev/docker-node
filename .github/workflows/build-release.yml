@@ -25,7 +25,9 @@ jobs:
       - name: ⚙️ Get version for image tag
         id: version
         run: |
-          echo "version=${{ github.ref_name#v }}" >> $GITHUB_OUTPUT
+          version=${{ github.ref_name }}
+          version=${version#v}
+          echo "version=$version" >> $GITHUB_OUTPUT
 
   build:
     needs: prepare
