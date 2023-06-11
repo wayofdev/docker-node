@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.6](https://github.com/wayofdev/docker-node/compare/v1.14.5...v1.14.6) (2023-06-11)
+
+
+### Bug Fixes
+
+* **deps:** update dependency pnpm to v8.6.2 ([0cfc213](https://github.com/wayofdev/docker-node/commit/0cfc21352a61be3f46476efb6b9e68b8f373862a))
+
 ## [1.14.5](https://github.com/wayofdev/docker-node/compare/v1.14.4...v1.14.5) (2023-06-05)
 
 
