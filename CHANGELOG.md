@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.14.19](https://github.com/wayofdev/docker-node/compare/v1.14.18...v1.14.19) (2023-09-04)
+
+
+### Miscellaneous
+
+* **deps:** update actions/checkout action to v4 ([55b3b98](https://github.com/wayofdev/docker-node/commit/55b3b987c4f711c969c0cba7193880ce3a8bd3f9))
+
 ## [1.14.18](https://github.com/wayofdev/docker-node/compare/v1.14.17...v1.14.18) (2023-08-31)
 
 
