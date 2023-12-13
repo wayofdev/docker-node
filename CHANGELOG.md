@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.15.0](https://github.com/wayofdev/docker-node/compare/v1.14.33...v1.15.0) (2023-12-13)
+
+
+### Features
+
+* add Node 16 support for legacy projects ([59bfe3e](https://github.com/wayofdev/docker-node/commit/59bfe3e1bc5237a626e29715b6f558ea74f72816))
+
 ## [1.14.33](https://github.com/wayofdev/docker-node/compare/v1.14.32...v1.14.33) (2023-12-09)
 
 
