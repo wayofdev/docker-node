@@ -23,6 +23,10 @@ RUN set -eux; \
     curl \
     git \
     libc6-compat \
+    python3 \
+    py3-pip \
+    build-base \
+    libpng-dev \
   && ARCH=$(uname -m) &&  \
     if [ "$ARCH" = "x86_64" ]; then \
       curl -fsSL "https://github.com/pnpm/pnpm/releases/download/v{{ pnpm_version }}/pnpm-linuxstatic-x64" -o /bin/pnpm; \

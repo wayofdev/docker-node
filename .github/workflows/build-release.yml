@@ -20,7 +20,7 @@ jobs:
         run: |
           echo 'matrix={
             "os_name": ["alpine"],
-            "node_version": ["lts", "18", "20"]
+            "node_version": ["lts", "16", "18", "20"]
           }' | tr -d '\n' >> $GITHUB_OUTPUT
 
       - name: ⚙️ Get version for image tag
