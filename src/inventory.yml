@@ -20,5 +20,9 @@ all:
           ansible_connection: local
           node_version: 16
           os_name: alpine
+        14-alpine:
+          ansible_connection: local
+          node_version: 14
+          os_name: alpine
 
 ...
