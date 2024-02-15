@@ -4,6 +4,6 @@
         "url": "https://github.com/wayofdev/docker-node.git"
     },
     "dependencies": {
-        "pnpm": "8.15.2"
+        "pnpm": "8.15.3"
     }
 }
